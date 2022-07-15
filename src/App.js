@@ -3,6 +3,7 @@ import { useState } from "react";
 
 import UserContext from "./contexts/UserContext";
 import { GlobalStyleDark, GlobalStyleLight } from "./themes/GlobalStyle";
+import LoginScreen from "./pages/LoginScreen";
 
 function App() {
   const [dark, setDark] = useState(true);
@@ -11,7 +12,9 @@ function App() {
     <UserContext.Provider>
       <BrowserRouter>
         {dark ? <GlobalStyleDark /> : <GlobalStyleLight />}
-        <Routes></Routes>
+        <Routes>
+          <Route path='/' element={<LoginScreen/>} />
+        </Routes>
       </BrowserRouter>
     </UserContext.Provider>
   );
