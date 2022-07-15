@@ -1,7 +1,7 @@
 import { createGlobalStyle } from "styled-components";
 import reset from "styled-reset";
 
-const GlobalStyle = createGlobalStyle`
+const GlobalStyleLight = createGlobalStyle`
 ${reset}
     * {
         box-sizing: border-box;
@@ -17,4 +17,20 @@ ${reset}
     }
 `;
 
-export default GlobalStyle;
+const GlobalStyleDark = createGlobalStyle`
+${reset}
+    * {
+        box-sizing: border-box;
+    }
+    body {
+        background-color: #c6c6c6;
+        font-family: 'Finlandica', sans-serif;
+    }
+    
+    a {
+        text-decoration: none;
+        color: inherit;
+    }
+`;
+
+export { GlobalStyleLight, GlobalStyleDark };
